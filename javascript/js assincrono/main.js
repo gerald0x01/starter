@@ -1,10 +1,9 @@
-var xhr = new XMLHttpRequest();
+axios.get('https://api.github.com/users/gerald0x01');
 
-xhr.open('GET', 'https://api.github.com/users/gerald0x01');
-xhr.send(null);
-
-xhr.onreadystatechange = function(){
-    if (xhr.readyState === 4){
-        console.log(JSON.parse(xhr.responseText));
-    }
-}
+minhaPromise()
+    .then(function(response){
+        console.log(response);
+    })
+    .catch(function(err){
+        console.warn(err);
+    });
